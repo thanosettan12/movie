@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<body style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ mo.img.url }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 25vh;">
+  <div class="movie-description">
+    <h1>{{ mo.name }}</h1>
+    <p>{{ mo.year }}</p>
+    <p class="movie-description">{{ mo.disc }}</p>
+      <div class="UD">
+    <a href="{% url 'movieapp:update' mo.id %}">Update</a>
+    <a href="{% url 'movieapp:delete' mo.id %}">Delete</a>
+          </div>
+  </div>
+</body>
+{% endblock %}

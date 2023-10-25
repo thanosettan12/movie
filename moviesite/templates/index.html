@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block body %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+
+<div class="container">
+    <div class="row">
+        {% for i in result %}
+        <div class="article-cards-container">
+       <div class="center">
+  <div class="article-card">
+    <div class="content">
+      <p class="date">{{i.year}}</p>
+      <a  class="mov_title" href="{% url 'movieapp:detail' i.id %}">{{i.name}}</a>
+    </div>
+    <img src="{{i.img.url}}" alt="article-cover" />
+  </div>
+</div>
+            </div>
+
+    {% endfor %}
+
+</div>
+    </div>
+
+
+{% endblock%}
+
+
+
+<!--<div class="row-md-3">-->
+
+<!--            <div class="card" style="width: 20rem ; height: 31rem; background-color:black">-->
+<!--                    <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap" width="200" height="400">-->
+<!--                    <div class="card-body">-->
+<!--                        <a  class="card-title" href="{% url 'movieapp:detail' i.id %}">{{i.name}}-->
+<!--                        <p class="card-text">{{i.year}}</p>-->
+<!--                    </div>-->
+<!--            </div>-->
+
+
+<!--    </div>-->
+
+
+
+
+
+
